@@ -19,7 +19,7 @@ router.get('/speakers', (req, res) => {
 
 router.get('/speakers/:speakerid', (req, res) => {
   
-    //
+    //some comment 
     let photos = [];
     let speakers = [];
 
