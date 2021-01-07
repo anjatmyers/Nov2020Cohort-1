@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+   
 </head>
 
 <body>
@@ -13,6 +15,20 @@
 
      <img src="<%= pic %> " alt="">
     
+    <% names.forEach(name => { %>
+     
+        <h2><%= name %> </h2>
+    <% }) %>
+
+    <h1><%= num %> </h1>
+
+    <h1><%= obj.firstName %> <%= obj.lastName %>  </h1>
+
+
+    <% data.forEach(el => { %>
+        <h3><%= el.state %> </h3>
+        <h2><%= el.cases %> </h2>
+    <% }) %>
 
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error ex, perspiciatis accusamus cupiditate sequi quis, quos, omnis dicta autem ea distinctio vero deleniti optio? Libero modi dolores neque ut odit?
 
