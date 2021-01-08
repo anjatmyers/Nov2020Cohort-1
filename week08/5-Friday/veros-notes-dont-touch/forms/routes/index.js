@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
     
     console.log(req.body.fName, req.body.lName, req.body);
 
-    res.send(`${firstName} ${lastName}`)
+    res.json(`${firstName} ${lastName}`)
 })
 
 
