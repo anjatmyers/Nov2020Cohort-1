@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    zodiac
+
+    <script>
+        let opts = {
+            mystic_dob: "1972-09-02",
+            mystic_name: "Veronica"
+        }
+        fetch("https://astrology-horoscope.p.rapidapi.com/zodiac_astrology/result/",
+            {
+                method: 'post',
+                headers: {
+                    "content-type": "application/x-www-form-urlencoded",
+                    "x-rapidapi-key": "5ebc03e641msh91de1db69ede71dp13e0f0jsnb8c37847f3b1",
+                    "x-rapidapi-host": "astrology-horoscope.p.rapidapi.com",
+                    "useQueryString": true
+                },
+                body: JSON.stringify(opts)
+            })
+            .then(result => result.json())
+            .then(data => {
+                console.log(data)
+            })
+    </script>
+</body>
+
+</html>

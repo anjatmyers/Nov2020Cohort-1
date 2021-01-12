@@ -17,7 +17,9 @@ router.get('/', (req, res) => {
     console.log(pagePhotos);
 
     res.render('index', {
-        photos: pagePhotos
+        artwork: pagePhotos,
+        pageTitle: "Roux Meetups", 
+        pageID: 'home'
     });
 })
 

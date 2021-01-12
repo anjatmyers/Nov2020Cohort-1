@@ -9,6 +9,14 @@ var obj = {
     z: 3
 }
 
+
+let mult = obj => {
+
+    let {x, y, z} = obj;
+
+    return x * y * z;
+}
+
 console.log(mult(obj));
 //300
 
@@ -28,8 +36,10 @@ var person1 = {
         country: "Spain",
         age: 23
     },
+    
     postsQuantitiy: 100
 }
+
 
 var person2 = {
     name: "Alice",
@@ -38,4 +48,20 @@ var person2 = {
         age: 25
     }
 }
+
+let person = (obj) => {
+
+    let {name:n, info: {country:c, age:a}, postsQuantitiy:p=0} = obj
+
+    console.log(`name ${n} country ${c} age ${a} postQuan ${p}`);
+  
+    // let {name:n, info:{country:c, age:a}, postsQuantitiy:-1} = obj;
+
+    // console.log(`name ${n} country ${c} age ${a} posts ${p}`);
+}
+
+person(person2);
+
+
+
 

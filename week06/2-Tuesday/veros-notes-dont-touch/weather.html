@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            color: purple;
+            font-size: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    weather
+
+    <div>
+
+    </div>
+
+    <script>
+
+        fetch("http://api.openweathermap.org/data/2.5/weather?q=miami&appid=9361bd03ec7175e9eea92fdf7a717518")
+            .then(response => response.json())
+            .then(data => {
+
+                //Celesius = Kelvin - 273.15 
+                let kelvin = data.main.temp;
+                let degC = Math.floor(kelvin - 273.15);
+
+                console.log(degC)
+
+                //F = C * 1.8 + 32; 
+
+                let degF = Math.floor(degC * 1.8 + 32);
+
+                console.log(degF);
+
+                //look of for div node 
+                let div = document.querySelector('div');
+
+                div.textContent = `Current Temperature: ${degF}`;
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+
+
+    </script>
+</body>
+
+</html>

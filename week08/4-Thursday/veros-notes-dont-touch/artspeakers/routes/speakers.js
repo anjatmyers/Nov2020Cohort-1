@@ -13,7 +13,9 @@ router.get('/speakers', (req, res) => {
 
     res.render('speakers', {
         artwork: pagePhotos,
-        speakers: pageSpeakers
+        speakers: pageSpeakers,
+        pageTitle: "Roux Meetups--Speakers",
+        pageID: 'speakers'
     })
 })
 
@@ -21,7 +23,7 @@ router.get('/speakers/:speakerid', (req, res) => {
   
     //some comment 
     let photos = [];
-    let speakers = [];
+    let speakers = []; //[{}]
 
     pageSpeakers.forEach(speakerObj => {
 
@@ -33,7 +35,9 @@ router.get('/speakers/:speakerid', (req, res) => {
 
     res.render('speakers', {
         artwork: photos,
-        speakers: speakers
+        speakers: speakers,
+        pageTitle: `Roux Meetups--${speakers[0].name}`, 
+        pageID: 'speakerDetail'
     })
 })
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="demo"></p>
+
+    <script>
+
+        try{
+            let num = 1;
+            num.toPrecision(500);
+        }
+        catch(e){
+            //console.log(e);
+
+            if(e instanceof RangeError){
+                console.log("there is someting wrong with the precision")
+                let p = document.querySelector('#demo')
+                p.textContent= "there is someting wrong with the precision";
+            }
+            else{
+                console.log('generic error found')
+            }
+
+        }
+
+        // let num = 1;
+        // num.toPrecision(500)
+
+        // try {
+        //     alerrrt("Welcome to our site")
+        // }
+        // catch {
+        //     console.log('error in this code')
+        // }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    hello
+    <script>
+
+        // localStorage.obj = { "key1": 1, "key2": 2, "key3": 3 }
+
+        // let obj = {
+        //     key: 1,
+        //     key2: 
+        // }
+
+        localStorage.color = true;
+
+        localStorage.setItem('name', 'Veronica')
+
+        localStorage.removeItem('name');
+        console.log(localStorage.color)
+
+
+        let obj = {
+            key1: 1,
+            key2: 2,
+            key3: 3
+        }
+
+        let str = JSON.stringify(obj)
+
+        localStorage.obj =JSON.stringify(obj);
+        
+        let newObj = JSON.parse(localStorage.obj);
+
+        console.log(newObj)
+
+    </script>
+</body>
+
+</html>

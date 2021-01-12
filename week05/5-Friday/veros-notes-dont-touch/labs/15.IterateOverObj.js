@@ -4,6 +4,7 @@ Create a function sumObjectValues() that will sum all values of the fields that 
 number.  
 Ensure that iteration is done only over own properties of the object
 */
+//typeof() ==="number"
 
 var nums = {
     a: 10,
