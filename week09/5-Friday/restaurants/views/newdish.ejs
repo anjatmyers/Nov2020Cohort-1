@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    new dish
+
+    <form action="/newdish" method="POST">
+
+        <select name="category" >
+            <% categories.forEach(category => { %>
+             
+                <option value="<%= category.id %> "><%= category.name %></option>
+            <% }) %>
+        </select>
+        
+        <br>
+        name <input type="text" placeholder="title" name="name"><br>
+
+        description: <input type="text" name="description" placeholder="description"><br>
+
+        price: <input type="text" name="price" placeholder="price"><br>
+
+        course: <input type="text" name="course" placeholder="course"><br>
+
+        imgURL: <input type="text" name="imageURL" placeholder="image url"><br>
+
+        <input type="submit">
+    </form>
+
+</body>
+
+</html>

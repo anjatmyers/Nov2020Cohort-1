@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 //const io = require('socket.io')();
 const socket = require('socket.io');
+//const reload = require('reload');
 
 
 //ejs
@@ -26,8 +27,6 @@ let io = socket(server);
 
 io.on('connection', (socket)=>{
 
-  console.log('you are connect');
-  
   //listening for messages from client
   socket.on('postMessage', (msg)=>{
 
@@ -36,6 +35,8 @@ io.on('connection', (socket)=>{
     io.emit('updateMessages', msg)
   })
 })
+//reloads pages
+//reload(server, app);
 
 
 

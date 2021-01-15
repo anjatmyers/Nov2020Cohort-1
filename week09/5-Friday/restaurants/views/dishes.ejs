@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    dishes
+
+    <a href="/newdish">Submit a new dish</a>
+
+    <% dishes.forEach(dishObj => { %>
+     
+            <h1><%= dishObj.name %> </h1>
+
+            <h2><%= dishObj.fooddescription %> </h2>
+
+            <h3><%= dishObj.price %> </h3>
+
+            <h3><%= dishObj.course %> </h3>
+
+            <img height="200px" src="<%= dishObj.imageurl %> " alt="">
+
+    <% }) %>
+</body>
+
+</html>

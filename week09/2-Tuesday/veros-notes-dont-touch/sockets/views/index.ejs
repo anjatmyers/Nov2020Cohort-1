@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+        <form>
+            <input type="text" id="chat">
+            <input type="submit">
+        </form>
+
+        <ul id="messages">
+           
+        </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.5/socket.io.js"></script>
+    
+    <script>
+
+        const socket = io();
+
+        //find our form in dom 
+        //attach event listenter 
+        // find chat input fields 
+        // get contents 
+        //emit the message back to the server
+
+        let form = document.querySelector('form');
+
+        form.addEventListener('submit', (e)=>{
+            e.preventDefault();
+
+            let chat = document.querySelector('#chat');
+
+
+            socket.emit('msgFromClient', chat.value);
+        })
+
+        //logic to receive msgs from server 
+        // find ul tag 
+        //insert broadcasted server message 
+
+        socket.on('msgFromServer', (serverMessage)=>{
+
+            let messages = document.querySelector('#messages');
+
+            let liTags = `<li>${serverMessage}</li>` + messages.innerHTML; 
+
+            messages.innerHTML = liTags;
+
+        })
+
+    </script>
+</body>
+
+</html>

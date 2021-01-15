@@ -4,8 +4,9 @@ const socket = io();
 let chatUsername = document.querySelector('#chat-username');
 let chatMessage = document.querySelector('#chat-message');
 
-socket.on('connect', ()=>{
+socket.on('connection', ()=>{
 
+    
     let chatForm = document.querySelector('form');
 
     chatForm.addEventListener('submit', (e)=>{
