@@ -2,6 +2,8 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models/database');
+const todoModel = require('../models/todos');
+
 router.use(express.json());
 router.use(express.urlencoded({extended: false}));
 
@@ -12,42 +14,33 @@ router.get('/', (req,res) => {
 })
 
 
-router.get('/api', (req, res) => {
+router.get('/api', async(req, res) => {
     //return all of the current todos
     //1 2 3 4 5   5, 4, 3, 2, 1
-    db.query("SELECT * FROM todos ORDER BY id DESC")
-    .then(results =>{
-        //[{} {} {}]
 
-        res.json(results)
-    })
-    .catch(error =>{
-
-        res.status(404).send('error');
-    })
+    try{
+        let records = await todoModel.getAllTodos()
+    
+        res.json(records)
+    }
+    catch(error){
+        res.send(error)
+    }
     
 })
 
 
-router.post('/api', (req, res) => {
+router.post('/api', async (req, res) => {
     //insert a todo
-    
-    db.none(`INSERT INTO todos VALUES (DEFAULT, $1)`, [req.body.description])
-    .then(()=>{
 
-        db.query("SELECT * FROM todos ORDER BY id DESC")
-        .then(records =>{
-
-            res.json(records);
-        })
-        .catch(error =>{
-            res.status(404).send('error in query')
-        })
-    })
-    .catch(error =>{
-        res.status(404).send('error in inserting new record')
-    })
-
+    try{
+        await todoModel.insertTodo(req.body.description);
+        let records = await todoModel.getAllTodos();
+        res.send(records);
+    }
+    catch(error){
+        return error;
+    }
   
 })
 

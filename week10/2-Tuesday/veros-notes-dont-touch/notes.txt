@@ -1,0 +1,22 @@
+
+
+author
+- id
+- firstName 
+- lastName
+- bio 
+- imageURL 
+- email 
+- twitter 
+- linkedIn
+
+
+blogs
+- id
+- Title 
+- authorID 
+- body 
+- isPublished  true
+- publishDate  1/25 
+
+
