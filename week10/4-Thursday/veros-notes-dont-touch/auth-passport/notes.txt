@@ -6,6 +6,7 @@ install
 - sequelize 
 - pg, pg-hstore
 - helmet
+- bcryptjs
 
 
 route 
