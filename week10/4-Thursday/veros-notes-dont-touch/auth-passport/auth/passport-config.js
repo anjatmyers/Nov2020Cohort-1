@@ -1,6 +1,6 @@
 
 
-const LocalStrategy = require('passport-local').Strategy;
+const LocalStrategy = require('passport-local').Strategy
 const bcrypt = require('bcryptjs');
 const db = require('../models');
 // const passport = require('./passport-instance');
@@ -23,18 +23,22 @@ const init = (passport) => {
 
                         if(response){
                             //this means a match, user with correct password 
-
+                            console.log('passwords matched');
                             //serialize user gets called here
-                            done(null, {id: record.id, username: record.username})
+                           
+                            
+                            done(null, { id: record.id, username: record.username })
                         }
                         else {
                             //no session for you - username mismatch 
+                            console.log('passwords didnt');
                             done(null, false)
                         }
                    })
             }
             else{
                 //no session fo you
+                console.log(`user not found`)
                 done(null, false)
             }
         })
@@ -44,7 +48,7 @@ const init = (passport) => {
 
     passport.serializeUser((user, done) =>{
         //passport adding information to the sessions
-
+        console.log(`serializing user`)
         done(null, user.id)
 
     })

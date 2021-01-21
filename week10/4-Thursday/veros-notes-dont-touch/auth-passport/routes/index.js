@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
 });
 
 router.get('/protected', authReq, (req, res) => {
-  
+  console.log('authentiated');
   res.send('protected')
 })
 
