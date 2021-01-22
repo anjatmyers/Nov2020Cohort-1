@@ -11,6 +11,7 @@ const init = (passport) => {
 
     passport.use( new LocalStrategy((username, password, done) =>{
         
+        console.log(`inside passport.use: username ${username}, password: ${password}`);
         //database call
         db.users.findAll({where: {username: username}})
         .then(records =>{
@@ -55,10 +56,12 @@ const init = (passport) => {
     })
 
     passport.deserializeUser((id, done)=>{
-        //checking to see if user is valid with the cookie that was passed from request 
+        //checking to see if user is valid with the 
+        //cookie that was passed from request 
 
         // id is coming from the session
 
+        console.log('deserializing user');
         db.users.findByPk(id)
         .then(record =>{
             done(null, record)
