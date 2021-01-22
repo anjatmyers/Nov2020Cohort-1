@@ -5,9 +5,9 @@ const helmet = require('helmet');
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-const passport = require('passport');
-require('./auth/passport-config')(passport);
+const passport = require('passport'); //once instance of passport
 
+require('./auth/passport-config')(passport);
 
 var cookieSession = require('cookie-session');
 
