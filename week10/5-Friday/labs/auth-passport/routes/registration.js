@@ -14,10 +14,10 @@ router.post("/registration", async (req, res) => {
 
   //hash our password
 
-  try {
+  try {  
     let passwordEncrypted = bcrypt.hashSync(password, 8);
 
-    //add logic for duplicate users
+  
     let insertResult = await db.users.create({
       username: username,
       email: email,
