@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import './assests/styles2.css'
+// import './assests/styles2.css'
+// import App from "./App2";
 
-import App from "./App2";
+import News from './components/News'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <News />
   </React.StrictMode>,
   document.getElementById("root")
 );
