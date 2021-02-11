@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import BaseLayout from './components/layout/BaseLayout';
 import Forms from './components/Forms';
+import FormsHooks from './components/FormsHooks'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/styles.css';
 
@@ -20,6 +21,7 @@ ReactDOM.render(
         <Switch>
           <Route exact path='/' component={App}/>
           <Route path='/forms' component={Forms}/>
+          <Route path='/forms_hooks' component={FormsHooks}/>
           <Route component={NoMatch}/>
         </Switch>
       </BaseLayout>
