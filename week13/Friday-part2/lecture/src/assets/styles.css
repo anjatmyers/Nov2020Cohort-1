@@ -1,0 +1,14 @@
+
+body{
+    background-color: mintcream;
+}
+
+.formColor{
+    background-color: rgb(210, 245, 228);
+}
+
+.formFont{
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    color:  rgb(1, 37, 20);;
+}

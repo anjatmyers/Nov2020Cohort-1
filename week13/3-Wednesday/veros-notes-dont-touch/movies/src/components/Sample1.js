@@ -4,10 +4,11 @@ class Sample1 extends Component {
 
   constructor(props) {
     super();
-
+   
     this.history = props.history;
   }
 
+  
   componentDidMount() {
     
   }

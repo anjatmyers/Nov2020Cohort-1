@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import BaseLayout from './components/layout/BaseLayout'
 import Sample1 from './components/Sample1'
 import Sample2 from './components/Sample2'
+import App2 from './App2'
 import {
   BrowserRouter as Router,
   Route,
@@ -12,7 +13,7 @@ import {
 import App from "./App";
 
 
-const App2 = () => <h1>Home Page</h1>
+
 const About = () => <h1>About us</h1>
 const ContactUs = () => <h1>Contact Us</h1>
 
@@ -37,7 +38,7 @@ ReactDOM.render(
     <Router>
       <BaseLayout>
         <Switch>
-          <Route exact path="/" component={App2} />
+          <Route exact path="/" component={App} />
           <Route path="/about" component={About} />
           <Route path="/contactUs" component={ContactUs} />
           <Route path="/blog/:blogID" component={Blog} />
@@ -47,6 +48,8 @@ ReactDOM.render(
           <Route path="/sample1" component={Sample1} />
           <Route path="/sample2/:id" component={Sample2} />
           <Route path="/sample2" component={Sample2} />
+          <Route path="/app2" component={App2} />
+          
           <Route component={NoMatch} />
         </Switch>
       </BaseLayout>
