@@ -5,6 +5,7 @@ import BaseLayout from './components/layout/BaseLayout';
 import Forms from './components/Forms';
 import FormsHooks from './components/FormsHooks';
 import Parent from './components/liftingState/Parent';
+import ProjectManagement from './components/projectManagement/ProjectManagement'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/styles.css';
 
@@ -24,6 +25,7 @@ ReactDOM.render(
           <Route path='/forms' component={Forms}/>
           <Route path='/forms_hooks' component={FormsHooks}/>
           <Route path='/lifting_state' component={Parent}/>
+          <Route path='/project_management' component={ProjectManagement}/>
           <Route component={NoMatch}/>
         </Switch>
       </BaseLayout>

@@ -1,14 +1,29 @@
-
-body{
-    background-color: mintcream;
+body {
+  background-color: mintcream;
 }
 
-.formColor{
-    background-color: rgb(210, 245, 228);
+.formColor {
+  background-color: rgb(210, 245, 228);
 }
 
-.formFont{
-    font-size: 18px;
-    font-family: 'Courier New', Courier, monospace;
-    color:  rgb(1, 37, 20);;
+.formFont {
+  font-size: 18px;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(1, 37, 20);
+}
+
+.navAnchor a {
+  font-size: 11px !important;
+  /* color: yellow !important; */
+}
+
+.quote {
+  font-size: 12px;
+  font-style: italic;
+  color: darkgray;
+}
+
+.projectHover li:hover {
+  background-color: rgb(250, 247, 210);
+  color: maroon;
 }
