@@ -15,6 +15,7 @@ const Header = () => {
       <Link className="nav-item nav-link active" to="/">Home <span className="sr-only">(current)</span></Link>
       <Link className="nav-item nav-link" to="/forms">Forms</Link>
       <Link className="nav-item nav-link" to="/forms_hooks">Forms with Hooks</Link>
+      <Link className="nav-item nav-link" to="/lifting_state">Lifting State</Link>
       
     </div>
   </div>
